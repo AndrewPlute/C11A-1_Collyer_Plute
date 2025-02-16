@@ -44,8 +44,8 @@ public class Cat {
 		g2.fillOval(x, y, EYE_WIDTH, EYE_HEIGHT);
 		// Draw the mouth
 		g2.setColor(Color.pink);
-		x = catX + MOUTH_X;
-		y = catY + MOUTH_Y;
+		x = catX + MOUTH_X - 5;
+		y = catY + MOUTH_Y + 10;
 		g2.fillOval(x, y, MOUTH_WIDTH, MOUTH_HEIGHT);
 		g2.setColor(Color.black);
 		// Meow text appears below cat head, +10 places below 
@@ -67,5 +67,16 @@ public class Cat {
         rightEar.addPoint(catX + HEAD_DIMENSION - 30, catY - 20); 
         rightEar.addPoint(catX + HEAD_DIMENSION, catY + 40); 
         g2.fillPolygon(rightEar);
+        
+        // Draw nose
+        g2.setColor(Color.pink);
+        Polygon nose = new Polygon();
+        nose.addPoint(catX + HEAD_DIMENSION / 2 - 5, catY + HEAD_DIMENSION / 2 + 10);
+        nose.addPoint(catX + HEAD_DIMENSION / 2 - 10, catY + HEAD_DIMENSION / 2 + 5);
+        nose.addPoint(catX + HEAD_DIMENSION / 2, catY + HEAD_DIMENSION / 2 + 5);
+        g2.fillPolygon(nose);
+        
+        // Tings for Thombas to maybe add: update coordinates for things, Add whiskers, Add teeth;
+        
 	}
 }
